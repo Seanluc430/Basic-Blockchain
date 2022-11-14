@@ -12,5 +12,23 @@ public class Main {
         String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
         System.out.println(blockchainJson);
     }
+
+    //Checking validity of chain
+    public static Boolean isChainValid(){
+        Block currBlock;
+        Block prevBlock;
+
+        //Hash check
+        for(int i=1; i<blockchain.size(); i++){
+            currBlock = blockchain.get(i);
+            prevBlock = blockchain.get(i-1);
+
+            if(!currBlock.hash.equals(currBlock.prevHash)){
+                System.out.println("Previous Hashes not equal");
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
