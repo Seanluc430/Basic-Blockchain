@@ -14,3 +14,4 @@ public class Block {
         timeStamp = new Date().getTime();
     }
 }
+
