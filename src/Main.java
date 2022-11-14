@@ -23,7 +23,14 @@ public class Main {
             currBlock = blockchain.get(i);
             prevBlock = blockchain.get(i-1);
 
-            if(!currBlock.hash.equals(currBlock.prevHash)){
+            //Current hash check
+            if(!currBlock.hash.equals(currBlock.calculateHash())){
+                System.out.println("Current Hashes not equal");
+                return false;
+            }
+
+            //Previous hash check
+            if(!prevBlock.hash.equals(currBlock.prevHash)){
                 System.out.println("Previous Hashes not equal");
                 return false;
             }
