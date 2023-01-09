@@ -21,7 +21,7 @@ public class StringUtility {
     }
 
     //ECDSA Signature applied and returns wanted bytes
-    public static byte[] applyECDSASig(PrivateKey privateKey,, String input){
+    public static byte[] applyECDSASig(PrivateKey privateKey, String input){
         Signature dsa;
         byte[] output = new byte[0];
         try{
