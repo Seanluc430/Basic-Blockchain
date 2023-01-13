@@ -1,10 +1,13 @@
 import java.security.Security;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.google.gson.GsonBuilder;
 
-public class Main {
+public class BasicCoin {
 
     public static ArrayList<Block> blockchain = new ArrayList<Block>();
+    public static HashMap<String, TransactionOutput> UTXOs = new HashMap<String, TransactionOutput>(); //unspent transactions
     public static int difficulty = 5;
     public static Wallet walA;
     public static Wallet walB;
@@ -54,4 +57,5 @@ public class Main {
         return true;
     }
 }
+
 
